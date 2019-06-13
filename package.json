@@ -1,0 +1,28 @@
+{
+  "name": "@mantocko/public-assets",
+  "version": "0.0.0",
+  "description": "A package for uploading public assets to a DO space.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "do",
+    "space",
+    "asset",
+    "public",
+    "upload"
+  ],
+  "author": "Elliott Mantock",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.474.0",
+    "gulp": "^4.0.2",
+    "gulp-tap": "^1.0.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-config-recommended": "^4.0.0"
+  }
+}

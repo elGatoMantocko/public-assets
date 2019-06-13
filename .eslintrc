@@ -1,0 +1,19 @@
+{
+  "extends": ["eslint:recommended", "google"],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "plugins": [
+    "mocha"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "max-len": 0,
+    "no-invalid-this": 0,
+    "camelcase": 0
+  }
+}
