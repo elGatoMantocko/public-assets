@@ -3,6 +3,14 @@ const {relative} = require('path');
 
 const {Endpoint, S3} = require('aws-sdk');
 
+/**
+ * Gulp plugin to tap a file in a stream and upload it to s3
+ * @param {*} param0
+ * @param {String} param0.endpointUrl base endpoint url used to put the s3 object to
+ * @param {String} param0.accessKeyId access key id to s3
+ * @param {String} param0.secretAccessKey secrect access key to s3
+ * @param {Object} param0.fileOptions additional options added to an object
+ */
 function uploadToS3({endpointUrl, accessKeyId, secretAccessKey, fileOptions} = {}) {
   const endpoint = new Endpoint(endpointUrl);
   const s3 = new S3({endpoint, accessKeyId, secretAccessKey});
@@ -11,7 +19,7 @@ function uploadToS3({endpointUrl, accessKeyId, secretAccessKey, fileOptions} = {
    * Function to upload a file to s3
    * @param {File} file file to upload
    */
-  function uploadFile(file) {
+  function getFilePropertiesAndUpload(file) {
     // we only handle buffers for now (directories and other files are unsupported)
     if (file === null || file === undefined || !file.isBuffer()) return;
 
@@ -29,7 +37,10 @@ function uploadToS3({endpointUrl, accessKeyId, secretAccessKey, fileOptions} = {
     });
   }
 
-  return tap(uploadFile);
+  return tap(getFilePropertiesAndUpload);
 }
 
+/**
+ * @exports
+ */
 module.exports = {uploadToS3};
