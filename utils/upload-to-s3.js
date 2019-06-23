@@ -5,7 +5,7 @@ const {Endpoint, S3} = require('aws-sdk');
 
 /**
  * Gulp plugin to tap a file in a stream and upload it to s3
- * @param {*} param0
+ * @param {Object} [param0]
  * @param {String} param0.endpointUrl base endpoint url used to put the s3 object to
  * @param {String} param0.accessKeyId access key id to s3
  * @param {String} param0.secretAccessKey secrect access key to s3

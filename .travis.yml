@@ -1,10 +1,21 @@
 language: node_js
 node_js:
-  - "node"
+- node
 branches:
   only:
-    - master
+  - master
 install:
-  - npm install
+- npm install
 script:
-  - ./node_modules/.bin/gulp ship
+- "./node_modules/.bin/gulp ship"
+deploy:
+  provider: s3
+  access_key_id: MT6TLVZH6UG2TLVSMJHV
+  secret_access_key:
+    secure: kqttIecQ3dUrUcAswZTL+5IXZCTr9GgrROkM9QzKX6R3l8EAt21suz9Zr9e6ydBWKwcaBOHMo0DSBVuEAQrIJwZFP2VIn6hCIbF1lvbrJ8plrx5Ahe4uM/vaW3MBvIT0FSn1iLEoyP53RkGdwmfs3Jng8N0+5fJu/P0aFYIEBZHVNr+ozlGOdzBmHWEIPEjVZXeamfZ2UI0XBhQ9LYwaDGaP08dobsWe5NdCylFiXWmPHi8lFULvHXa4eq8yFMzEhMa78yjCB1hsfTCsocMuOMog/imP+BkQnZbqA1tDE78rrDvRk8zymupfax8T5MSu8/AoZ4YSnOrSqtGOHsEQgK/HoZmqP0VBeiAvwKVB7BMKi4zxla1yZrR8+URiG98VVWrOMB15WRKuVGZVcZmYAv6GcJX7I0LmNcnou8C+3b+QQhIR2q8AumjzS2ygkb3FBDA0pZyQCr+QB3NahjvgUUK61w60URhE7eYAFcNtxu4jIIRYoWIGUmTBofBJBIBH+Yt3bOqQz8uUS7NL0p2xfCqQmqNnILvNcZcZ+N2yPhxWVcgM1GWez9j3tJr5Nnk486AavasXxgbTE8pU5fK3Wt1vdM0XXbU+tQRhasfbzLFb0BA3QttQpg6iBree9Ebv5E2oureMHp10LNPGMurasFNpF23yDRRlxcxoRI8apm0=
+  bucket: mantocko-public-assets
+  local-dir: public
+  acl: public_read
+  on:
+    repo: elGatoMantocko/public-assets
+  endpoint: https://sfo2.digitaloceanspaces.com

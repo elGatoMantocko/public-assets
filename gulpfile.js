@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const del = require('del');
 const {uploadToS3} = require('./utils/upload-to-s3');
 
 const endpointUrl = process.env.S3_ENDPOINT_URL;
@@ -15,6 +16,8 @@ const secretAccessKey = process.env.SECRET_ACCESS_KEY;
 
 const uploadOpts = {endpointUrl, fileOptions, accessKeyId, secretAccessKey};
 
+gulp.task('clean', () => del('public'));
+
 gulp.task('copy', function() {
   return gulp.src('src/**/*', {allowEmpty: true})
       .pipe(gulp.dest('public'));
@@ -26,4 +29,4 @@ gulp.task('upload', function() {
 });
 
 // right now all i do is copy, but i might transpile js and css later
-gulp.task('ship', gulp.series('copy', 'upload'));
+gulp.task('ship', gulp.series('clean', 'copy'));
