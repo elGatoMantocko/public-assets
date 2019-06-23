@@ -14,5 +14,6 @@ deploy:
   local-dir: public
   acl: public_read
   on:
+    all_branches: true
     repo: elGatoMantocko/public-assets
   endpoint: https://sfo2.digitaloceanspaces.com
