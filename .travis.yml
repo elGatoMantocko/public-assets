@@ -13,6 +13,7 @@ deploy:
   bucket: mantocko-public-assets
   local-dir: public
   acl: public_read
+  skip_cleanup: true
   on:
     all_branches: true
     repo: elGatoMantocko/public-assets
