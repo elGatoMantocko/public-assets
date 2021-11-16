@@ -15,7 +15,7 @@
   "author": "Elliott Mantock",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.474.0",
+    "aws-sdk": "^2.814.0",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-tap": "^1.0.1",
